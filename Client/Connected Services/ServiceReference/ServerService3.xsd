@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Shared.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Shared.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:53851/ServerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Shared" />
+  <xs:complexType name="SaleDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="tns:CurrenciesClass" />
+      <xs:element minOccurs="0" name="Price" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaleDetails" nillable="true" type="tns:SaleDetails" />
+  <xs:complexType name="CurrenciesClass">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Shared" base="q1:Enumeration">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CurrenciesClass" nillable="true" type="tns:CurrenciesClass" />
+</xs:schema>
